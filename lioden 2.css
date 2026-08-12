@@ -1,52 +1,209 @@
 /* =========================================================
-   FIN'S LIODEN OVERRIDES
-   font + colors + cave images + duplicate character fix
+   ANIMATED WHITE CAT PAW CURSOR
+   THIS @import MUST BE AT THE VERY TOP OF THE CSS FILE
+   ========================================================= */
+
+@import url("https://cdn.cursors-4u.net/cursors/animated/cat-paw-curl-f8836eeb-128.css");
+
+
+/* =========================================================
+   FIN'S LIODEN CSS — FINAL OVERRIDES
+   Pink / Milk / Midnight Navy / Blueberry
    ========================================================= */
 
 
 /* =========================================================
-   FONT
+   MAIN ANIMATED BACKGROUND
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
+html,
+body {
+    background-image:
+        url("https://i.pinimg.com/originals/cf/d7/ba/cfd7baa5f08016b1b28901f2e39fc2ba.gif")
+        !important;
 
-* {
-    font-family: "EB Garamond", Georgia, serif !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
 }
 
 
 /* =========================================================
-   TEXT OUTLINE
+   REMOVE DUPLICATE GIFS OVER CHAT
    ========================================================= */
 
-/* light-background text */
-body,
-p,
-span,
-td,
-th,
-div,
-a,
-label,
-input,
-textarea,
-select {
-    text-shadow:
-        -0.5px -0.5px 0 #000,
-         0.5px -0.5px 0 #000,
-        -0.5px  0.5px 0 #000,
-         0.5px  0.5px 0 #000;
+.sidebar::before,
+.sidebar::after,
+#chatMessageContainer::before,
+#chatMessageContainer::after,
+#chatbox::before,
+#chatbox::after,
+.chatbox::before,
+.chatbox::after,
+#chat::before,
+#chat::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    background-image: none !important;
+}
+
+
+/* Hide accidental actual copies inside sidebar/chat */
+
+.sidebar img[src*="5230004a286b6fd261c839649ecbae8a"],
+.sidebar img[src*="ab4cb1aba5a2e59211a4ec0fcbb49ec3"],
+#chatMessageContainer img[src*="5230004a286b6fd261c839649ecbae8a"],
+#chatMessageContainer img[src*="ab4cb1aba5a2e59211a4ec0fcbb49ec3"] {
+    display: none !important;
+}
+
+
+/* Remove OLD body pseudo-element characters */
+
+body::before,
+body::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
 }
 
 
 /* =========================================================
-   MAIN TEXT COLORS
+   TOP-RIGHT ANIMATED CHARACTER
    ========================================================= */
 
-body,
-.container.main,
-.col-md-9,
-.sidebar {
+html::before {
+    content: "" !important;
+
+    position: fixed !important;
+
+    top: 90px !important;
+    right: 10px !important;
+    left: auto !important;
+    bottom: auto !important;
+
+    width: 240px !important;
+    height: 240px !important;
+
+    background-image:
+        url("https://i.pinimg.com/originals/52/30/00/5230004a286b6fd261c839649ecbae8a.gif")
+        !important;
+
+    background-size: contain !important;
+    background-position: top right !important;
+    background-repeat: no-repeat !important;
+
+    pointer-events: none !important;
+
+    z-index: 9999 !important;
+}
+
+
+/* =========================================================
+   BOTTOM-LEFT ANIMATED CHARACTER
+   ========================================================= */
+
+html::after {
+    content: "" !important;
+
+    position: fixed !important;
+
+    bottom: 0 !important;
+    left: 5px !important;
+    top: auto !important;
+    right: auto !important;
+
+    width: 300px !important;
+    height: 300px !important;
+
+    background-image:
+        url("https://i.pinimg.com/originals/ab/4c/b1/ab4cb1aba5a2e59211a4ec0fcbb49ec3.gif")
+        !important;
+
+    background-size: contain !important;
+    background-position: bottom left !important;
+    background-repeat: no-repeat !important;
+
+    pointer-events: none !important;
+
+    z-index: 9999 !important;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.container.main {
+    background: rgba(253, 233, 242, 0.76) !important;
+
+    border-left: 2px solid #F2C4CD !important;
+    border-right: 2px solid #F2C4CD !important;
+
+    box-shadow:
+        0 0 25px rgba(5, 31, 69, 0.35) !important;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.topbar,
+.navbar,
+.navbar-default {
+    background: rgba(5, 31, 69, 0.92) !important;
+
+    border-color: #F2C4CD !important;
+
+    color: #FDE9F2 !important;
+}
+
+.topbar a,
+.navbar a,
+.navbar-default .navbar-nav > li > a {
+    color: #FDE9F2 !important;
+}
+
+.topbar a:hover,
+.navbar a:hover,
+.navbar-default .navbar-nav > li > a:hover {
+    color: #F2C4CD !important;
+
+    background: rgba(242, 196, 205, 0.15) !important;
+}
+
+
+/* =========================================================
+   BREADCRUMBS
+   ========================================================= */
+
+.breadcrumb {
+    background: rgba(0, 17, 102, 0.84) !important;
+
+    color: #FDE9F2 !important;
+
+    border: 1px solid #F2C4CD !important;
+
+    border-radius: 8px !important;
+}
+
+.breadcrumb a {
+    color: #F2C4CD !important;
+}
+
+
+/* =========================================================
+   GENERAL COLORS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
     color: #051F45 !important;
 }
 
@@ -60,110 +217,99 @@ a:hover {
 
 
 /* =========================================================
-   REMOVE OLD YELLOW / ORANGE COLORS
+   PANELS
    ========================================================= */
 
-/* stat cells / small gold boxes */
-.table .left,
-.table .right,
-.table td,
-.table-responsive td,
-td {
-    background-color: rgba(242, 196, 205, 0.72) !important;
-    color: #051F45 !important;
+.panel,
+.panel-default,
+.well {
+    background: rgba(253, 233, 242, 0.82) !important;
+
+    border: 2px solid #051F45 !important;
+
+    border-radius: 14px !important;
+}
+
+.panel-heading {
+    background: #051F45 !important;
+
+    color: #FDE9F2 !important;
+
+    border-color: #F2C4CD !important;
 }
 
 
-/* darker label cells such as Level, Stats, Territory etc */
-.table td:first-child,
+/* =========================================================
+   REMOVE YELLOW / ORANGE TABLE COLORS
+   ========================================================= */
+
+.table {
+    background: rgba(253, 233, 242, 0.75) !important;
+
+    color: #051F45 !important;
+}
+
+.table > tbody > tr > td,
+.table > tbody > tr > th {
+    border-color: rgba(5, 31, 69, 0.18) !important;
+}
+
+
+/* Dark labels */
+
+.table .left,
 .table th,
-.table .left {
-    background-color: rgba(5, 31, 69, 0.88) !important;
+.table td:first-child {
+    background: rgba(5, 31, 69, 0.90) !important;
+
     color: #FDE9F2 !important;
 }
 
 
-/* lighter value cells */
-.table td:nth-child(even),
-.table .right {
-    background-color: rgba(253, 233, 242, 0.84) !important;
-    color: #001166 !important;
+/* Light values */
+
+.table .right,
+.table td:nth-child(even) {
+    background: rgba(253, 233, 242, 0.92) !important;
+
+    color: #051F45 !important;
 }
 
 
-/* brown/orange horizontal strips */
+/* Top bars */
+
+.table .top,
+.top {
+    background: #051F45 !important;
+
+    color: #F2C4CD !important;
+}
+
+
+/* Former orange/brown bottom bars */
+
 .table .bottom,
 .bottom,
 tr.bottom td {
-    background: rgba(0, 17, 102, 0.82) !important;
+    background: #001166 !important;
+
     color: #F2C4CD !important;
 }
 
 
 /* =========================================================
-   KING / PROFILE INFORMATION AREA
+   BUTTONS
    ========================================================= */
 
-#about,
-#about .table,
-#about table {
-    background: rgba(253, 233, 242, 0.72) !important;
-}
-
-
-/* dark navy title bars */
-.table .top,
-.top,
-.panel-heading {
-    background: #051F45 !important;
-    color: #F2C4CD !important;
-}
-
-
-/* =========================================================
-   PLAYER INFORMATION BOX
-   ========================================================= */
-
-#player,
-#player-info,
-#player-info .table,
-#player-info table {
-    background: rgba(242, 196, 205, 0.70) !important;
-}
-
-
-/* joined / last active labels */
-.label,
-.label-default,
-.input-group-addon {
-    background: #051F45 !important;
-    color: #FDE9F2 !important;
-}
-
-
-/* =========================================================
-   KING DYNASTY / PRIDE DYNASTY / ACHIEVEMENTS
-   SHOWCASE / BEETLE BOOK
-   ========================================================= */
-
-.dynasty,
-.feature,
-.featured,
-.col-sm-4 > .panel,
-.col-sm-6 > .panel {
-    background: rgba(242, 196, 205, 0.75) !important;
-    color: #051F45 !important;
-}
-
-
-/* buttons underneath those areas */
 .btn,
 button,
 input[type="submit"] {
     background: #051F45 !important;
-    color: #F2C4CD !important;
 
-    border: 1px solid #001166 !important;
+    color: #FDE9F2 !important;
+
+    border: 1px solid #F2C4CD !important;
+
     border-radius: 7px !important;
 }
 
@@ -171,207 +317,208 @@ input[type="submit"] {
 button:hover,
 input[type="submit"]:hover {
     background: #001166 !important;
-    color: #FDE9F2 !important;
-}
 
-
-/* =========================================================
-   CLAN MEMBERSHIP AREA
-   ========================================================= */
-
-.panel,
-.panel-default {
-    background: rgba(253, 233, 242, 0.78) !important;
-}
-
-.panel-heading {
-    background: #051F45 !important;
     color: #F2C4CD !important;
 }
 
 
 /* =========================================================
-   CAVE CARD TEXT + BACKGROUNDS
+   INPUTS
    ========================================================= */
 
-.cave-grid {
-    background: rgba(242, 196, 205, 0.72) !important;
+input,
+textarea,
+select {
+    background: rgba(253, 233, 242, 0.92) !important;
+
     color: #051F45 !important;
 
-    border-radius: 8px !important;
+    border: 1px solid #001166 !important;
+
+    border-radius: 6px !important;
+}
+
+
+/* =========================================================
+   PROGRESS BARS
+   ========================================================= */
+
+.progress {
+    background: rgba(5, 31, 69, 0.20) !important;
+
+    border-radius: 20px !important;
+
     overflow: hidden !important;
 }
 
-.cave-grid:hover {
-    background: rgba(253, 233, 242, 0.92) !important;
+.progress-bar {
+    background:
+        linear-gradient(
+            90deg,
+            #001166,
+            #051F45,
+            #F2C4CD
+        )
+        !important;
 }
 
 
-/* cave names */
-.cave-grid,
-.cave-grid a,
-.cave-grid span,
-.cave-grid div {
-    color: #001166 !important;
+/* =========================================================
+   CAVE CARDS
+   ========================================================= */
+
+div.cave-grid {
+    background: rgba(242, 196, 205, 0.92) !important;
+
+    border: 1px solid rgba(5, 31, 69, 0.35) !important;
+
+    border-radius: 8px !important;
+
+    overflow: hidden !important;
+}
+
+div.cave-grid,
+div.cave-grid a,
+div.cave-grid span {
+    color: #051F45 !important;
 }
 
 
-/* cave pictures */
+/* All cave images */
+
 div.cave-grid > img {
     width: 100% !important;
     height: 125px !important;
+
     object-fit: cover !important;
+
+    border-radius: 7px 7px 0 0 !important;
 }
 
 
 /* =========================================================
-   CUSTOM CAVE IMAGES
-   ========================================================= */
-
-
-/* UNSORTED */
-a[href$="unsorted.php?id=397134"] > div.cave-grid > img {
-    content: url("https://i.pinimg.com/736x/49/30/c4/4930c42cbd2c8cd9f3ae4ff7d2d4d662.jpg") !important;
-}
-
-
-/* PREGNANT / NESTING */
-div.cave-grid > img[src*="nesting"],
-div.cave-grid > img[src*="pregnant"] {
-    content: url("https://i.pinimg.com/736x/ef/14/1e/ef141e96b26b302906eb18bbf39e5486.jpg") !important;
-}
-
-
-/* PRIDE OVERVIEW */
-a[href$="lionoverview.php?id=397134"] > div.cave-grid > img {
-    content: url("https://i.pinimg.com/736x/ef/14/1e/ef141e96b26b302906eb18bbf39e5486.jpg") !important;
-}
-
-
-/* =========================================================
-   CUSTOM CAVES
-   ========================================================= */
-
-/*
    IMPORTANT:
-   Cubs and Fems need their actual cave IDs.
-
-   Example:
-   https://www.lioden.com/cave.php?id=123456
-
-   The number after id= is the cave ID.
-
-   Replace CUBS_CAVE_ID and FEMS_CAVE_ID below.
-*/
+   FIRST TWO CARDS ARE LEFT ALONE
+   UNSORTED + NESTING KEEP THEIR CURRENT IMAGES
+   ========================================================= */
 
 
-/* CUBS */
-a[href$="CUBS_CAVE_ID"] > div.cave-grid > img {
-    content: url("https://i.pinimg.com/1200x/cd/82/10/cd82100cc6f761fbbbc1db24fcf26c43.jpg") !important;
-}
+/* =========================================================
+   CARD 3 — PRIDE OVERVIEW
+   ========================================================= */
 
-
-/* FEMS */
-a[href$="FEMS_CAVE_ID"] > div.cave-grid > img {
-    content: url("https://i.pinimg.com/1200x/cd/82/10/cd82100cc6f761fbbbc1db24fcf26c43.jpg") !important;
+a[href$="lionoverview.php?id=397134"] > div.cave-grid > img {
+    content:
+        url("https://i.pinimg.com/1200x/cd/82/10/cd82100cc6f761fbbbc1db24fcf26c43.jpg")
+        !important;
 }
 
 
 /* =========================================================
-   EMPTY CAVE SLOT IMAGE
+   CUBS
    ========================================================= */
 
-/*
-   This changes empty cave slots without changing your
-   occupied caves.
-*/
-
-a[href*="create-cave.php"] > div.cave-grid > img {
-    content: url("https://i.pinimg.com/1200x/cd/82/10/cd82100cc6f761fbbbc1db24fcf26c43.jpg") !important;
+a[href*="cave.php"]:nth-of-type(1) > div.cave-grid > img {
+    content:
+        url("https://i.pinimg.com/736x/2c/fe/0f/2cfe0ff25f6f276246c329ea958e3bd7.jpg")
+        !important;
 }
 
 
 /* =========================================================
-   REMOVE DUPLICATE TOP-RIGHT CHARACTER
+   FEMS
    ========================================================= */
 
-/*
-   Kill any old copies that were accidentally attached
-   to the sidebar/chat area.
-*/
-
-.sidebar::before,
-.sidebar::after,
-#chatMessageContainer::before,
-#chatMessageContainer::after,
-#chatbox::before,
-#chatbox::after,
-.chatbox::before,
-.chatbox::after {
-    content: none !important;
-    display: none !important;
-    background-image: none !important;
-}
-
-
-/* keep ONLY the intended top-right character */
-body::before {
-    content: "" !important;
-
-    position: fixed !important;
-
-    top: 120px !important;
-    right: 20px !important;
-    left: auto !important;
-    bottom: auto !important;
-
-    width: 250px !important;
-    height: 250px !important;
-
-    background:
-        url("https://i.pinimg.com/originals/52/30/00/5230004a286b6fd261c839649ecbae8a.gif")
-        center / contain
-        no-repeat !important;
-
-    pointer-events: none !important;
-
-    z-index: 9999 !important;
+a[href*="cave.php"]:nth-of-type(2) > div.cave-grid > img {
+    content:
+        url("https://i.pinimg.com/1200x/5a/93/ad/5a93ad41244451df31ceca30c06a5732.jpg")
+        !important;
 }
 
 
 /* =========================================================
-   KEEP BOTTOM-LEFT CHARACTER
+   EMPTY CAVE SLOT — DEFAULT
    ========================================================= */
 
-body::after {
-    content: "" !important;
-
-    position: fixed !important;
-
-    left: 10px !important;
-    bottom: 0 !important;
-
-    width: 300px !important;
-    height: 300px !important;
-
-    background:
-        url("https://i.pinimg.com/originals/ab/4c/b1/ab4cb1aba5a2e59211a4ec0fcbb49ec3.gif")
-        left bottom / contain
-        no-repeat !important;
-
-    pointer-events: none !important;
-
-    z-index: 9999 !important;
+a[href*="create-cave"] > div.cave-grid > img {
+    content:
+        url("https://i.pinimg.com/736x/49/30/c4/4930c42cbd2c8cd9f3ae4ff7d2d4d662.jpg")
+        !important;
 }
 
 
 /* =========================================================
-   CUSTOM CURSOR
+   ADDITIONAL CAVE SLOT IMAGES
    ========================================================= */
 
-* {
-    cursor:
-        url("https://cdn.cursors-4u.net/previews/cat-paw-curl-f8836eeb-preview-128.webp")
-        0 0,
-        auto !important;
+.cave-grid:nth-of-type(6) > img {
+    content:
+        url("https://i.pinimg.com/736x/45/e8/65/45e865c225b8b9e994842f0b066a9fe3.jpg")
+        !important;
+}
+
+.cave-grid:nth-of-type(7) > img {
+    content:
+        url("https://i.pinimg.com/736x/71/90/e5/7190e578ed42b2c83adfa22b65287060.jpg")
+        !important;
+}
+
+.cave-grid:nth-of-type(8) > img {
+    content:
+        url("https://i.pinimg.com/1200x/96/f4/39/96f439a90aaaab47fa6a39e37319d320.jpg")
+        !important;
+}
+
+.cave-grid:nth-of-type(9) > img {
+    content:
+        url("https://i.pinimg.com/1200x/de/90/61/de90617133f27ff54e0dd85213495aa1.jpg")
+        !important;
+}
+
+.cave-grid:nth-of-type(10) > img {
+    content:
+        url("https://i.pinimg.com/1200x/a7/be/67/a7be67eb2cf2df34e930facfdbe90e51.jpg")
+        !important;
+}
+
+.cave-grid:nth-of-type(11) > img {
+    content:
+        url("https://i.pinimg.com/736x/79/1c/20/791c20ead38e30dc5e7e93e62ec8a20a.jpg")
+        !important;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FDE9F2;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #051F45;
+
+    border: 2px solid #F2C4CD;
+
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #001166;
+}
+
+
+/* =========================================================
+   TEXT SELECTION
+   ========================================================= */
+
+::selection {
+    background: #F2C4CD;
+
+    color: #051F45;
 }
