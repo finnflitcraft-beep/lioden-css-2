@@ -1,0 +1,650 @@
+@import url("https://cdn.cursors-4u.net/cursors/animated/cat-paw-curl-f8836eeb-128.css");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap");
+
+
+/* =========================================================
+   FIN'S LIODEN CSS
+   Navy / Blueberry / Pink / Milk
+   ========================================================= */
+
+:root {
+    --navy: #051F45;
+    --blue: #001166;
+    --pink: #F2C4CD;
+    --milk: #FDE9F2;
+
+    --dark-panel: rgba(5, 31, 69, 0.92);
+    --pink-panel: rgba(242, 196, 205, 0.88);
+    --milk-panel: rgba(253, 233, 242, 0.88);
+}
+
+
+/* =========================================================
+   FONT
+   ========================================================= */
+
+html,
+body,
+body *,
+input,
+textarea,
+select,
+button {
+    font-family: "EB Garamond", Georgia, serif !important;
+}
+
+
+/* =========================================================
+   ANIMATED PAGE BACKGROUND
+   ========================================================= */
+
+html,
+body {
+    background-image:
+        url("https://i.pinimg.com/originals/cf/d7/ba/cfd7baa5f08016b1b28901f2e39fc2ba.gif")
+        !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+
+    color: var(--navy) !important;
+}
+
+
+/* =========================================================
+   MAIN SITE CONTAINER
+   ========================================================= */
+
+.container.main {
+    background: rgba(253, 233, 242, 0.78) !important;
+
+    border-left: 2px solid var(--pink) !important;
+    border-right: 2px solid var(--pink) !important;
+
+    box-shadow:
+        0 0 25px rgba(5, 31, 69, 0.40) !important;
+}
+
+
+/* =========================================================
+   REMOVE OLD DUPLICATE CHAT GIFS
+   ========================================================= */
+
+body::before,
+body::after,
+.sidebar::before,
+.sidebar::after,
+#chatMessageContainer::before,
+#chatMessageContainer::after,
+#chatbox::before,
+#chatbox::after,
+.chatbox::before,
+.chatbox::after,
+#chat::before,
+#chat::after {
+    content: none !important;
+    display: none !important;
+    background-image: none !important;
+}
+
+
+/* hide accidental GIF images located inside sidebar/chat */
+
+.sidebar img[src*="5230004a286b6fd261c839649ecbae8a"],
+.sidebar img[src*="ab4cb1aba5a2e59211a4ec0fcbb49ec3"],
+#chatMessageContainer img[src*="5230004a286b6fd261c839649ecbae8a"],
+#chatMessageContainer img[src*="ab4cb1aba5a2e59211a4ec0fcbb49ec3"] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   TOP RIGHT ANIMATED CHARACTER
+   ========================================================= */
+
+html::before {
+    content: "" !important;
+
+    position: fixed !important;
+
+    top: 90px !important;
+    right: 12px !important;
+
+    width: 240px !important;
+    height: 240px !important;
+
+    background:
+        url("https://i.pinimg.com/originals/52/30/00/5230004a286b6fd261c839649ecbae8a.gif")
+        center / contain
+        no-repeat !important;
+
+    pointer-events: none !important;
+
+    z-index: 9999 !important;
+}
+
+
+/* =========================================================
+   BOTTOM LEFT ANIMATED CHARACTER
+   ========================================================= */
+
+html::after {
+    content: "" !important;
+
+    position: fixed !important;
+
+    bottom: 0 !important;
+    left: 5px !important;
+
+    width: 300px !important;
+    height: 300px !important;
+
+    background:
+        url("https://i.pinimg.com/originals/ab/4c/b1/ab4cb1aba5a2e59211a4ec0fcbb49ec3.gif")
+        left bottom / contain
+        no-repeat !important;
+
+    pointer-events: none !important;
+
+    z-index: 9999 !important;
+}
+
+
+/* =========================================================
+   NAVIGATION / TOP BAR
+   ========================================================= */
+
+.topbar,
+.navbar,
+.navbar-default {
+    background: var(--dark-panel) !important;
+
+    color: var(--milk) !important;
+
+    border: none !important;
+}
+
+.topbar a,
+.navbar a,
+.navbar-default .navbar-nav > li > a {
+    color: var(--pink) !important;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000 !important;
+}
+
+.navbar a:hover,
+.topbar a:hover {
+    color: var(--milk) !important;
+
+    background: rgba(242, 196, 205, 0.15) !important;
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--pink) !important;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000 !important;
+}
+
+
+/* =========================================================
+   GENERAL TEXT
+   ========================================================= */
+
+p,
+span,
+td,
+th,
+label,
+.cave-grid,
+.panel {
+    text-shadow:
+        -0.5px -0.5px 0 #000,
+         0.5px -0.5px 0 #000,
+        -0.5px  0.5px 0 #000,
+         0.5px  0.5px 0 #000;
+}
+
+a {
+    color: var(--blue) !important;
+}
+
+a:hover {
+    color: var(--pink) !important;
+}
+
+
+/* =========================================================
+   BREADCRUMBS
+   ========================================================= */
+
+.breadcrumb {
+    background: var(--dark-panel) !important;
+
+    color: var(--milk) !important;
+
+    border: 1px solid var(--pink) !important;
+
+    border-radius: 8px !important;
+}
+
+.breadcrumb a {
+    color: var(--pink) !important;
+}
+
+
+/* =========================================================
+   PANELS / SIDEBAR BOXES
+   ========================================================= */
+
+.panel,
+.panel-default,
+.well {
+    background: var(--milk-panel) !important;
+
+    border: 2px solid var(--navy) !important;
+
+    border-radius: 14px !important;
+
+    box-shadow:
+        0 4px 9px rgba(5, 31, 69, 0.20) !important;
+}
+
+.panel-heading {
+    background: var(--dark-panel) !important;
+
+    color: var(--pink) !important;
+
+    border-bottom: 1px solid var(--pink) !important;
+}
+
+
+/* =========================================================
+   TABLES / KING STATS
+   ========================================================= */
+
+.table {
+    background: var(--milk-panel) !important;
+
+    color: var(--navy) !important;
+}
+
+.table > tbody > tr > td,
+.table > tbody > tr > th {
+    border-color: rgba(5, 31, 69, 0.20) !important;
+}
+
+
+/* dark label cells */
+
+.inner-table .left,
+.table .left,
+td.left {
+    background: var(--navy) !important;
+
+    color: var(--pink) !important;
+}
+
+
+/* light value cells */
+
+.inner-table .right,
+.table .right,
+td.right {
+    background: var(--milk) !important;
+
+    color: var(--blue) !important;
+}
+
+
+/* top headers */
+
+.table .top,
+.top {
+    background: var(--navy) !important;
+
+    color: var(--pink) !important;
+}
+
+
+/* formerly orange/brown lower strips */
+
+.table .bottom,
+.bottom,
+tr.bottom td {
+    background: var(--blue) !important;
+
+    color: var(--pink) !important;
+}
+
+
+/* remove remaining orange/gold cells */
+
+td,
+th {
+    border-color: rgba(5, 31, 69, 0.20) !important;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn,
+button,
+input[type="submit"],
+input[type="button"] {
+    background: var(--navy) !important;
+
+    color: var(--pink) !important;
+
+    border: 1px solid var(--pink) !important;
+
+    border-radius: 7px !important;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000 !important;
+}
+
+.btn:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background: var(--blue) !important;
+
+    color: var(--milk) !important;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+input,
+textarea,
+select {
+    background: var(--milk) !important;
+
+    color: var(--navy) !important;
+
+    border: 1px solid var(--blue) !important;
+
+    border-radius: 5px !important;
+}
+
+
+/* =========================================================
+   PROGRESS BARS
+   ========================================================= */
+
+.progress {
+    background: rgba(242, 196, 205, 0.45) !important;
+
+    border-radius: 20px !important;
+}
+
+.progress-bar {
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--navy),
+            var(--pink)
+        )
+        !important;
+}
+
+
+/* =========================================================
+   CAVE CARDS
+   ========================================================= */
+
+div.cave-grid {
+    background: var(--pink-panel) !important;
+
+    color: var(--navy) !important;
+
+    border: 1px solid rgba(5, 31, 69, 0.35) !important;
+
+    border-radius: 8px !important;
+
+    overflow: hidden !important;
+}
+
+div.cave-grid > img {
+    width: 100% !important;
+    height: 125px !important;
+
+    object-fit: cover !important;
+
+    border-radius: 7px 7px 0 0 !important;
+}
+
+div.cave-grid,
+div.cave-grid a,
+div.cave-grid span {
+    color: var(--navy) !important;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000 !important;
+}
+
+
+/* =========================================================
+   UNSORTED
+   KEEP EXISTING IMAGE
+   ========================================================= */
+
+/*
+   No replacement rule.
+*/
+
+
+/* =========================================================
+   NESTING
+   KEEP EXISTING IMAGE
+   ========================================================= */
+
+/*
+   No replacement rule.
+*/
+
+
+/* =========================================================
+   PRIDE OVERVIEW
+   ========================================================= */
+
+a[href$="lionoverview.php?id=397134"] > div.cave-grid > img {
+    content:
+        url("https://i.pinimg.com/1200x/cd/82/10/cd82100cc6f761fbbbc1db24fcf26c43.jpg")
+        !important;
+}
+
+
+/* =========================================================
+   CUBS
+   CAVE ID: 436151
+   ========================================================= */
+
+a[href$="436151"] > div.cave-grid > img,
+a[href$="cave.php?id=436151"] > div.cave-grid > img {
+    content:
+        url("https://i.pinimg.com/736x/2c/fe/0f/2cfe0ff25f6f276246c329ea958e3bd7.jpg")
+        !important;
+}
+
+
+/* =========================================================
+   FEMS
+   CAVE ID: 329232
+   ========================================================= */
+
+a[href$="329232"] > div.cave-grid > img,
+a[href$="cave.php?id=329232"] > div.cave-grid > img {
+    content:
+        url("https://i.pinimg.com/1200x/5a/93/ad/5a93ad41244451df31ceca30c06a5732.jpg")
+        !important;
+}
+
+
+/* =========================================================
+   EMPTY CAVE SLOTS
+   DO NOT USE A GENERAL IMAGE RULE HERE.
+   EACH SLOT GETS ITS OWN IMAGE BELOW.
+   ========================================================= */
+
+
+/*
+   These selectors count only empty-cave links.
+   Chrome supports the "of selector" form of :nth-child.
+*/
+
+
+/* EMPTY SLOT 1 */
+
+a:nth-child(1 of [href*="create-cave"]) > div.cave-grid > img {
+    content:
+        url("https://i.pinimg.com/736x/49/30/c4/4930c42cbd2c8cd9f3ae4ff7d2d4d662.jpg")
+        !important;
+}
+
+
+/* EMPTY SLOT 2 */
+
+a:nth-child(2 of [href*="create-cave"]) > div.cave-grid > img {
+    content:
+        url("https://i.pinimg.com/736x/45/e8/65/45e865c225b8b9e994842f0b066a9fe3.jpg")
+        !important;
+}
+
+
+/* EMPTY SLOT 3 */
+
+a:nth-child(3 of [href*="create-cave"]) > div.cave-grid > img {
+    content:
+        url("https://i.pinimg.com/736x/71/90/e5/7190e578ed42b2c83adfa22b65287060.jpg")
+        !important;
+}
+
+
+/* EMPTY SLOT 4 */
+
+a:nth-child(4 of [href*="create-cave"]) > div.cave-grid > img {
+    content:
+        url("https://i.pinimg.com/1200x/96/f4/39/96f439a90aaaab47fa6a39e37319d320.jpg")
+        !important;
+}
+
+
+/* EMPTY SLOT 5 */
+
+a:nth-child(5 of [href*="create-cave"]) > div.cave-grid > img {
+    content:
+        url("https://i.pinimg.com/1200x/de/90/61/de90617133f27ff54e0dd85213495aa1.jpg")
+        !important;
+}
+
+
+/* EMPTY SLOT 6 */
+
+a:nth-child(6 of [href*="create-cave"]) > div.cave-grid > img {
+    content:
+        url("https://i.pinimg.com/1200x/a7/be/67/a7be67eb2cf2df34e930facfdbe90e51.jpg")
+        !important;
+}
+
+
+/* EMPTY SLOT 7 */
+
+a:nth-child(7 of [href*="create-cave"]) > div.cave-grid > img {
+    content:
+        url("https://i.pinimg.com/736x/79/1c/20/791c20ead38e30dc5e7e93e62ec8a20a.jpg")
+        !important;
+}
+
+
+/* =========================================================
+   CHAT COLORS
+   ========================================================= */
+
+#chatMessageContainer {
+    border: 1px solid var(--navy) !important;
+}
+
+.s-chat-message:nth-child(odd) {
+    background: rgba(253, 233, 242, 0.90) !important;
+
+    color: var(--navy) !important;
+}
+
+.s-chat-message:nth-child(even) {
+    background: rgba(242, 196, 205, 0.75) !important;
+
+    color: var(--navy) !important;
+}
+
+.s-chat-message__pinned {
+    background: rgba(5, 31, 69, 0.90) !important;
+
+    color: var(--pink) !important;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 11px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--milk);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--navy);
+
+    border: 2px solid var(--pink);
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--blue);
+}
+
+
+/* =========================================================
+   TEXT SELECTION
+   ========================================================= */
+
+::selection {
+    background: var(--pink);
+
+    color: var(--navy);
+}
