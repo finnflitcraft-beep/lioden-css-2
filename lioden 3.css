@@ -289,10 +289,11 @@ label {
 .table .left,
 td.left {
     background: var(--navy) !important;
-
     color: var(--pink) !important;
-}
 
+    border-radius: 20px !important;
+    padding: 8px 14px !important;
+}
 
 /* =========================================================
    LIGHT TABLE VALUE CELLS
