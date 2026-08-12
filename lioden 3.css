@@ -58,40 +58,13 @@ body {
    ========================================================= */
 
 .container.main {
-    background: transparent !important;
-    background-color: transparent !important;
+    background: rgba(253, 233, 242, 0.78) !important;
 
     border-left: 2px solid var(--pink) !important;
     border-right: 2px solid var(--pink) !important;
 
-    box-shadow: none !important;
-}
-
-
-/* =========================================================
-   TRANSPARENT PAGE / CONTENT BACKGROUNDS
-   Lets the animated GIF show through the large page areas
-   ========================================================= */
-
-.container.main > .row,
-.container.main .col-md-9,
-.container.main .col-md-8,
-.container.main .col-sm-9,
-.container.main .col-sm-8,
-.container.main .col-lg-9,
-.container.main .col-lg-8,
-#main,
-.main {
-    background-color: transparent !important;
-    background-image: none !important;
-}
-
-/* Preserve the actual styled cards and sidebar panels */
-.panel,
-.panel-default,
-.well,
-.sidebar .panel {
-    background-color: var(--milk-panel) !important;
+    box-shadow:
+        0 0 25px rgba(5, 31, 69, 0.40) !important;
 }
 
 
