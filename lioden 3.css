@@ -1,44 +1,639 @@
+@import url("https://cdn.cursors-4u.net/cursors/animated/cat-paw-curl-f8836eeb-128.css");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap");
+
+
 /* =========================================================
-   EMPTY CAVE SLOTS — SOLID PINK
+   FIN'S LIODEN CSS
+   Pink / Milk / Midnight Navy / Blueberry
    ========================================================= */
 
-/* Hide Lioden's default empty-cave image */
+:root {
+    --navy: #051F45;
+    --blue: #001166;
+    --pink: #F2C4CD;
+    --milk: #FDE9F2;
+
+    --dark-panel: rgba(5, 31, 69, 0.92);
+    --pink-panel: rgba(242, 196, 205, 0.88);
+    --milk-panel: rgba(253, 233, 242, 0.88);
+}
+
+
+/* =========================================================
+   FONT — EB GARAMOND
+   ========================================================= */
+
+html,
+body,
+body *,
+input,
+textarea,
+select,
+button {
+    font-family: "EB Garamond", Georgia, serif !important;
+}
+
+
+/* =========================================================
+   ANIMATED MAIN BACKGROUND
+   ========================================================= */
+
+html,
+body {
+    background-image:
+        url("https://i.pinimg.com/originals/cf/d7/ba/cfd7baa5f08016b1b28901f2e39fc2ba.gif")
+        !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+
+    color: var(--navy) !important;
+}
+
+
+/* =========================================================
+   MAIN LIODEN CONTAINER
+   ========================================================= */
+
+.container.main {
+    background: rgba(253, 233, 242, 0.78) !important;
+
+    border-left: 2px solid var(--pink) !important;
+    border-right: 2px solid var(--pink) !important;
+
+    box-shadow:
+        0 0 25px rgba(5, 31, 69, 0.40) !important;
+}
+
+
+/* =========================================================
+   REMOVE OLD/DUPLICATE CHAT GIFS
+   ========================================================= */
+
+body::before,
+body::after,
+.sidebar::before,
+.sidebar::after,
+#chatMessageContainer::before,
+#chatMessageContainer::after,
+#chatbox::before,
+#chatbox::after,
+.chatbox::before,
+.chatbox::after,
+#chat::before,
+#chat::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    background-image: none !important;
+}
+
+
+/* Remove any accidental GIFs inside chat/sidebar */
+
+.sidebar img[src*="5230004a286b6fd261c839649ecbae8a"],
+.sidebar img[src*="ab4cb1aba5a2e59211a4ec0fcbb49ec3"],
+#chatMessageContainer img[src*="5230004a286b6fd261c839649ecbae8a"],
+#chatMessageContainer img[src*="ab4cb1aba5a2e59211a4ec0fcbb49ec3"] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   TOP-RIGHT ANIMATED CHARACTER
+   ========================================================= */
+
+html::before {
+    content: "" !important;
+
+    position: fixed !important;
+
+    top: 90px !important;
+    right: 12px !important;
+    left: auto !important;
+    bottom: auto !important;
+
+    width: 240px !important;
+    height: 240px !important;
+
+    background-image:
+        url("https://i.pinimg.com/originals/52/30/00/5230004a286b6fd261c839649ecbae8a.gif")
+        !important;
+
+    background-size: contain !important;
+    background-position: top right !important;
+    background-repeat: no-repeat !important;
+
+    pointer-events: none !important;
+
+    z-index: 9999 !important;
+}
+
+
+/* =========================================================
+   BOTTOM-LEFT ANIMATED CHARACTER
+   ========================================================= */
+
+html::after {
+    content: "" !important;
+
+    position: fixed !important;
+
+    bottom: 0 !important;
+    left: 5px !important;
+    top: auto !important;
+    right: auto !important;
+
+    width: 300px !important;
+    height: 300px !important;
+
+    background-image:
+        url("https://i.pinimg.com/originals/ab/4c/b1/ab4cb1aba5a2e59211a4ec0fcbb49ec3.gif")
+        !important;
+
+    background-size: contain !important;
+    background-position: bottom left !important;
+    background-repeat: no-repeat !important;
+
+    pointer-events: none !important;
+
+    z-index: 9999 !important;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.topbar {
+    background: var(--dark-panel) !important;
+
+    color: var(--milk) !important;
+
+    border-color: var(--pink) !important;
+}
+
+.topbar a {
+    color: var(--pink) !important;
+}
+
+.topbar a:hover {
+    color: var(--milk) !important;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navbar,
+.navbar-default {
+    background: var(--dark-panel) !important;
+
+    border: none !important;
+
+    box-shadow:
+        0 4px 12px rgba(0, 17, 102, 0.30) !important;
+}
+
+.navbar a,
+.navbar-default .navbar-nav > li > a {
+    color: var(--pink) !important;
+
+    font-weight: 600 !important;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000 !important;
+}
+
+.navbar a:hover,
+.navbar-default .navbar-nav > li > a:hover {
+    color: var(--milk) !important;
+
+    background: rgba(242, 196, 205, 0.15) !important;
+}
+
+
+/* =========================================================
+   BREADCRUMBS
+   ========================================================= */
+
+.breadcrumb {
+    background: var(--dark-panel) !important;
+
+    color: var(--milk) !important;
+
+    border: 1px solid var(--pink) !important;
+    border-radius: 8px !important;
+}
+
+.breadcrumb a {
+    color: var(--pink) !important;
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--pink) !important;
+
+    font-family: "EB Garamond", Georgia, serif !important;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000 !important;
+}
+
+
+/* =========================================================
+   GENERAL LINKS
+   ========================================================= */
+
+a {
+    color: var(--blue) !important;
+}
+
+a:hover {
+    color: var(--pink) !important;
+}
+
+
+/* =========================================================
+   GENERAL TEXT OUTLINE
+   ========================================================= */
+
+p,
+span,
+td,
+th,
+label {
+    text-shadow:
+        -0.5px -0.5px 0 #000,
+         0.5px -0.5px 0 #000,
+        -0.5px  0.5px 0 #000,
+         0.5px  0.5px 0 #000;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    background: rgba(253, 233, 242, 0.55) !important;
+}
+
+
+/* =========================================================
+   PANELS
+   ========================================================= */
+
+.panel,
+.panel-default,
+.well {
+    background: var(--milk-panel) !important;
+
+    border: 2px solid var(--navy) !important;
+
+    border-radius: 14px !important;
+
+    box-shadow:
+        0 4px 9px rgba(5, 31, 69, 0.20) !important;
+}
+
+.panel-heading {
+    background: var(--dark-panel) !important;
+
+    color: var(--pink) !important;
+
+    border-bottom: 1px solid var(--pink) !important;
+}
+
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.table {
+    background: var(--milk-panel) !important;
+
+    color: var(--navy) !important;
+}
+
+.table > tbody > tr > td,
+.table > tbody > tr > th {
+    border-color: rgba(5, 31, 69, 0.20) !important;
+}
+
+
+/* =========================================================
+   DARK TABLE LABEL CELLS
+   ========================================================= */
+
+.inner-table .left,
+.table .left,
+td.left {
+    background: var(--navy) !important;
+
+    color: var(--pink) !important;
+}
+
+
+/* =========================================================
+   LIGHT TABLE VALUE CELLS
+   ========================================================= */
+
+.inner-table .right,
+.table .right,
+td.right {
+    background: var(--milk) !important;
+
+    color: var(--blue) !important;
+}
+
+
+/* =========================================================
+   TABLE TOP HEADERS
+   ========================================================= */
+
+.table .top,
+.top {
+    background: var(--navy) !important;
+
+    color: var(--pink) !important;
+}
+
+
+/* =========================================================
+   TABLE BOTTOM STRIPS
+   Removes orange/brown
+   ========================================================= */
+
+.table .bottom,
+.bottom,
+tr.bottom td {
+    background: var(--blue) !important;
+
+    color: var(--pink) !important;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn,
+button,
+input[type="submit"],
+input[type="button"] {
+    background: var(--navy) !important;
+
+    color: var(--pink) !important;
+
+    border: 1px solid var(--pink) !important;
+
+    border-radius: 7px !important;
+
+    font-family: "EB Garamond", Georgia, serif !important;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000 !important;
+}
+
+.btn:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background: var(--blue) !important;
+
+    color: var(--milk) !important;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+input,
+textarea,
+select {
+    background: var(--milk) !important;
+
+    color: var(--navy) !important;
+
+    border: 1px solid var(--blue) !important;
+
+    border-radius: 5px !important;
+}
+
+
+/* =========================================================
+   PROGRESS BARS
+   ========================================================= */
+
+.progress {
+    background: rgba(242, 196, 205, 0.45) !important;
+
+    border-radius: 20px !important;
+
+    overflow: hidden !important;
+}
+
+.progress-bar {
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--navy),
+            var(--pink)
+        )
+        !important;
+}
+
+
+/* =========================================================
+   ALERTS
+   ========================================================= */
+
+.alert {
+    background: rgba(242, 196, 205, 0.88) !important;
+
+    color: var(--navy) !important;
+
+    border: 1px solid var(--blue) !important;
+
+    border-radius: 8px !important;
+}
+
+
+/* =========================================================
+   CAVE CARDS
+   ========================================================= */
+
+div.cave-grid {
+    background: var(--pink-panel) !important;
+
+    color: var(--navy) !important;
+
+    border: 1px solid rgba(5, 31, 69, 0.35) !important;
+
+    border-radius: 8px !important;
+
+    overflow: hidden !important;
+}
+
+div.cave-grid > img {
+    width: 100% !important;
+    height: 125px !important;
+
+    object-fit: cover !important;
+
+    border-radius: 7px 7px 0 0 !important;
+}
+
+div.cave-grid,
+div.cave-grid a,
+div.cave-grid span {
+    color: var(--navy) !important;
+
+    font-family: "EB Garamond", Georgia, serif !important;
+}
+
+
+/* =========================================================
+   UNSORTED
+   KEEP ITS CURRENT IMAGE
+   ========================================================= */
+
+/* intentionally no override */
+
+
+/* =========================================================
+   NESTING
+   KEEP ITS CURRENT IMAGE
+   ========================================================= */
+
+/* intentionally no override */
+
+
+/* =========================================================
+   PRIDE OVERVIEW
+   ========================================================= */
+
+a[href$="lionoverview.php?id=397134"] > div.cave-grid > img {
+    content:
+        url("https://i.pinimg.com/1200x/cd/82/10/cd82100cc6f761fbbbc1db24fcf26c43.jpg")
+        !important;
+}
+
+
+/* =========================================================
+   CUBS
+   CAVE ID: 436151
+   ========================================================= */
+
+a[href$="436151"] > div.cave-grid > img,
+a[href$="cave.php?id=436151"] > div.cave-grid > img {
+    content:
+        url("https://i.pinimg.com/736x/2c/fe/0f/2cfe0ff25f6f276246c329ea958e3bd7.jpg")
+        !important;
+}
+
+
+/* =========================================================
+   FEMS
+   CAVE ID: 329232
+   ========================================================= */
+
+a[href$="329232"] > div.cave-grid > img,
+a[href$="cave.php?id=329232"] > div.cave-grid > img {
+    content:
+        url("https://i.pinimg.com/1200x/5a/93/ad/5a93ad41244451df31ceca30c06a5732.jpg")
+        !important;
+}
+
+
+/* =========================================================
+   EMPTY CAVE SLOTS
+   NO MORE REPEATED IMAGES
+   ========================================================= */
+
+/* Hide Lioden's empty cave picture */
+
 a[href*="create-cave"] > div.cave-grid > img {
     display: none !important;
 }
 
 
-/* Turn the empty image area into a pink panel */
+/* =========================================================
+   EMPTY CAVE IMAGE AREA
+   Solid pink with heart
+   ========================================================= */
+
 a[href*="create-cave"] > div.cave-grid::before {
     content: "♡" !important;
 
     display: flex !important;
+
     align-items: center !important;
     justify-content: center !important;
 
     width: 100% !important;
     height: 125px !important;
 
-    background: #F2C4CD !important;
+    box-sizing: border-box !important;
 
-    color: #051F45 !important;
+    background:
+        linear-gradient(
+            135deg,
+            #F2C4CD,
+            #FDE9F2,
+            #F2C4CD
+        )
+        !important;
+
+    color: var(--navy) !important;
 
     font-family: "EB Garamond", Georgia, serif !important;
-    font-size: 45px !important;
 
-    text-shadow: none !important;
+    font-size: 46px !important;
+    font-weight: 600 !important;
 
-    box-sizing: border-box !important;
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000 !important;
 }
 
 
-/* Bottom part containing "Empty Cave Slot" */
+/* =========================================================
+   EMPTY CAVE CARD
+   ========================================================= */
+
 a[href*="create-cave"] > div.cave-grid {
-    background: #FDE9F2 !important;
+    background: var(--milk) !important;
 
-    color: #051F45 !important;
+    color: var(--navy) !important;
 
-    border: 1px solid #051F45 !important;
+    border: 1px solid var(--navy) !important;
+
     border-radius: 8px !important;
 
     overflow: hidden !important;
@@ -46,7 +641,115 @@ a[href*="create-cave"] > div.cave-grid {
 
 
 /* Empty Cave Slot text */
+
 a[href*="create-cave"] > div.cave-grid,
 a[href*="create-cave"] > div.cave-grid * {
-    color: #051F45 !important;
+    color: var(--navy) !important;
+
+    font-family: "EB Garamond", Georgia, serif !important;
 }
+
+
+/* =========================================================
+   CHAT BOX
+   ========================================================= */
+
+#chatMessageContainer {
+    border: 1px solid var(--navy) !important;
+}
+
+
+/* alternating chat messages */
+
+.s-chat-message:nth-child(odd) {
+    background: rgba(253, 233, 242, 0.92) !important;
+
+    color: var(--navy) !important;
+}
+
+.s-chat-message:nth-child(even) {
+    background: rgba(242, 196, 205, 0.78) !important;
+
+    color: var(--navy) !important;
+}
+
+
+/* pinned chat */
+
+.s-chat-message__pinned {
+    background: var(--navy) !important;
+
+    color: var(--pink) !important;
+}
+
+
+/* =========================================================
+   IMAGES
+   ========================================================= */
+
+img {
+    border-radius: 6px;
+}
+
+
+/* =========================================================
+   HORIZONTAL LINES
+   ========================================================= */
+
+hr {
+    border: none !important;
+
+    height: 2px !important;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--blue),
+            var(--pink),
+            var(--blue),
+            transparent
+        )
+        !important;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 11px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--milk);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--navy);
+
+    border: 2px solid var(--pink);
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--blue);
+}
+
+
+/* =========================================================
+   TEXT SELECTION
+   ========================================================= */
+
+::selection {
+    background: var(--pink);
+
+    color: var(--navy);
+}
+
+
+/* =========================================================
+   END
+   ========================================================= */
