@@ -289,11 +289,10 @@ label {
 .table .left,
 td.left {
     background: var(--navy) !important;
-    color: var(--pink) !important;
 
-    border-radius: 20px !important;
-    padding: 8px 14px !important;
+    color: var(--pink) !important;
 }
+
 
 /* =========================================================
    LIGHT TABLE VALUE CELLS
@@ -813,6 +812,36 @@ body::after,
     background: none !important;
     background-image: none !important;
 }
+
+
+/* =========================================================
+   ROUNDED KING STAT LABELS
+   ========================================================= */
+
+.inner-table .left,
+.table .left,
+td.left {
+    background: var(--navy) !important;
+    color: var(--pink) !important;
+    border-radius: 20px !important;
+    padding: 8px 14px !important;
+}
+
+
+/* =========================================================
+   KING NAME — PINK TO NAVY ON HOVER
+   ========================================================= */
+
+.table .top a,
+.table .top a:visited {
+    color: #F2C4CD !important;
+    transition: color 0.25s ease !important;
+}
+
+.table .top a:hover {
+    color: #051F45 !important;
+}
+
 
 /* =========================================================
    END
