@@ -1,0 +1,377 @@
+/* =========================================================
+   FIN'S LIODEN OVERRIDES
+   font + colors + cave images + duplicate character fix
+   ========================================================= */
+
+
+/* =========================================================
+   FONT
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: "EB Garamond", Georgia, serif !important;
+}
+
+
+/* =========================================================
+   TEXT OUTLINE
+   ========================================================= */
+
+/* light-background text */
+body,
+p,
+span,
+td,
+th,
+div,
+a,
+label,
+input,
+textarea,
+select {
+    text-shadow:
+        -0.5px -0.5px 0 #000,
+         0.5px -0.5px 0 #000,
+        -0.5px  0.5px 0 #000,
+         0.5px  0.5px 0 #000;
+}
+
+
+/* =========================================================
+   MAIN TEXT COLORS
+   ========================================================= */
+
+body,
+.container.main,
+.col-md-9,
+.sidebar {
+    color: #051F45 !important;
+}
+
+a {
+    color: #001166 !important;
+}
+
+a:hover {
+    color: #F2C4CD !important;
+}
+
+
+/* =========================================================
+   REMOVE OLD YELLOW / ORANGE COLORS
+   ========================================================= */
+
+/* stat cells / small gold boxes */
+.table .left,
+.table .right,
+.table td,
+.table-responsive td,
+td {
+    background-color: rgba(242, 196, 205, 0.72) !important;
+    color: #051F45 !important;
+}
+
+
+/* darker label cells such as Level, Stats, Territory etc */
+.table td:first-child,
+.table th,
+.table .left {
+    background-color: rgba(5, 31, 69, 0.88) !important;
+    color: #FDE9F2 !important;
+}
+
+
+/* lighter value cells */
+.table td:nth-child(even),
+.table .right {
+    background-color: rgba(253, 233, 242, 0.84) !important;
+    color: #001166 !important;
+}
+
+
+/* brown/orange horizontal strips */
+.table .bottom,
+.bottom,
+tr.bottom td {
+    background: rgba(0, 17, 102, 0.82) !important;
+    color: #F2C4CD !important;
+}
+
+
+/* =========================================================
+   KING / PROFILE INFORMATION AREA
+   ========================================================= */
+
+#about,
+#about .table,
+#about table {
+    background: rgba(253, 233, 242, 0.72) !important;
+}
+
+
+/* dark navy title bars */
+.table .top,
+.top,
+.panel-heading {
+    background: #051F45 !important;
+    color: #F2C4CD !important;
+}
+
+
+/* =========================================================
+   PLAYER INFORMATION BOX
+   ========================================================= */
+
+#player,
+#player-info,
+#player-info .table,
+#player-info table {
+    background: rgba(242, 196, 205, 0.70) !important;
+}
+
+
+/* joined / last active labels */
+.label,
+.label-default,
+.input-group-addon {
+    background: #051F45 !important;
+    color: #FDE9F2 !important;
+}
+
+
+/* =========================================================
+   KING DYNASTY / PRIDE DYNASTY / ACHIEVEMENTS
+   SHOWCASE / BEETLE BOOK
+   ========================================================= */
+
+.dynasty,
+.feature,
+.featured,
+.col-sm-4 > .panel,
+.col-sm-6 > .panel {
+    background: rgba(242, 196, 205, 0.75) !important;
+    color: #051F45 !important;
+}
+
+
+/* buttons underneath those areas */
+.btn,
+button,
+input[type="submit"] {
+    background: #051F45 !important;
+    color: #F2C4CD !important;
+
+    border: 1px solid #001166 !important;
+    border-radius: 7px !important;
+}
+
+.btn:hover,
+button:hover,
+input[type="submit"]:hover {
+    background: #001166 !important;
+    color: #FDE9F2 !important;
+}
+
+
+/* =========================================================
+   CLAN MEMBERSHIP AREA
+   ========================================================= */
+
+.panel,
+.panel-default {
+    background: rgba(253, 233, 242, 0.78) !important;
+}
+
+.panel-heading {
+    background: #051F45 !important;
+    color: #F2C4CD !important;
+}
+
+
+/* =========================================================
+   CAVE CARD TEXT + BACKGROUNDS
+   ========================================================= */
+
+.cave-grid {
+    background: rgba(242, 196, 205, 0.72) !important;
+    color: #051F45 !important;
+
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.cave-grid:hover {
+    background: rgba(253, 233, 242, 0.92) !important;
+}
+
+
+/* cave names */
+.cave-grid,
+.cave-grid a,
+.cave-grid span,
+.cave-grid div {
+    color: #001166 !important;
+}
+
+
+/* cave pictures */
+div.cave-grid > img {
+    width: 100% !important;
+    height: 125px !important;
+    object-fit: cover !important;
+}
+
+
+/* =========================================================
+   CUSTOM CAVE IMAGES
+   ========================================================= */
+
+
+/* UNSORTED */
+a[href$="unsorted.php?id=397134"] > div.cave-grid > img {
+    content: url("https://i.pinimg.com/736x/49/30/c4/4930c42cbd2c8cd9f3ae4ff7d2d4d662.jpg") !important;
+}
+
+
+/* PREGNANT / NESTING */
+div.cave-grid > img[src*="nesting"],
+div.cave-grid > img[src*="pregnant"] {
+    content: url("https://i.pinimg.com/736x/ef/14/1e/ef141e96b26b302906eb18bbf39e5486.jpg") !important;
+}
+
+
+/* PRIDE OVERVIEW */
+a[href$="lionoverview.php?id=397134"] > div.cave-grid > img {
+    content: url("https://i.pinimg.com/736x/ef/14/1e/ef141e96b26b302906eb18bbf39e5486.jpg") !important;
+}
+
+
+/* =========================================================
+   CUSTOM CAVES
+   ========================================================= */
+
+/*
+   IMPORTANT:
+   Cubs and Fems need their actual cave IDs.
+
+   Example:
+   https://www.lioden.com/cave.php?id=123456
+
+   The number after id= is the cave ID.
+
+   Replace CUBS_CAVE_ID and FEMS_CAVE_ID below.
+*/
+
+
+/* CUBS */
+a[href$="CUBS_CAVE_ID"] > div.cave-grid > img {
+    content: url("https://i.pinimg.com/1200x/cd/82/10/cd82100cc6f761fbbbc1db24fcf26c43.jpg") !important;
+}
+
+
+/* FEMS */
+a[href$="FEMS_CAVE_ID"] > div.cave-grid > img {
+    content: url("https://i.pinimg.com/1200x/cd/82/10/cd82100cc6f761fbbbc1db24fcf26c43.jpg") !important;
+}
+
+
+/* =========================================================
+   EMPTY CAVE SLOT IMAGE
+   ========================================================= */
+
+/*
+   This changes empty cave slots without changing your
+   occupied caves.
+*/
+
+a[href*="create-cave.php"] > div.cave-grid > img {
+    content: url("https://i.pinimg.com/1200x/cd/82/10/cd82100cc6f761fbbbc1db24fcf26c43.jpg") !important;
+}
+
+
+/* =========================================================
+   REMOVE DUPLICATE TOP-RIGHT CHARACTER
+   ========================================================= */
+
+/*
+   Kill any old copies that were accidentally attached
+   to the sidebar/chat area.
+*/
+
+.sidebar::before,
+.sidebar::after,
+#chatMessageContainer::before,
+#chatMessageContainer::after,
+#chatbox::before,
+#chatbox::after,
+.chatbox::before,
+.chatbox::after {
+    content: none !important;
+    display: none !important;
+    background-image: none !important;
+}
+
+
+/* keep ONLY the intended top-right character */
+body::before {
+    content: "" !important;
+
+    position: fixed !important;
+
+    top: 120px !important;
+    right: 20px !important;
+    left: auto !important;
+    bottom: auto !important;
+
+    width: 250px !important;
+    height: 250px !important;
+
+    background:
+        url("https://i.pinimg.com/originals/52/30/00/5230004a286b6fd261c839649ecbae8a.gif")
+        center / contain
+        no-repeat !important;
+
+    pointer-events: none !important;
+
+    z-index: 9999 !important;
+}
+
+
+/* =========================================================
+   KEEP BOTTOM-LEFT CHARACTER
+   ========================================================= */
+
+body::after {
+    content: "" !important;
+
+    position: fixed !important;
+
+    left: 10px !important;
+    bottom: 0 !important;
+
+    width: 300px !important;
+    height: 300px !important;
+
+    background:
+        url("https://i.pinimg.com/originals/ab/4c/b1/ab4cb1aba5a2e59211a4ec0fcbb49ec3.gif")
+        left bottom / contain
+        no-repeat !important;
+
+    pointer-events: none !important;
+
+    z-index: 9999 !important;
+}
+
+
+/* =========================================================
+   CUSTOM CURSOR
+   ========================================================= */
+
+* {
+    cursor:
+        url("https://cdn.cursors-4u.net/previews/cat-paw-curl-f8836eeb-preview-128.webp")
+        0 0,
+        auto !important;
+}
