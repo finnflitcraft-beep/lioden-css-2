@@ -57,8 +57,6 @@ body {
    MAIN LIODEN CONTAINER
    ========================================================= */
 
-/* MAIN LIODEN CONTAINER — TRANSPARENT */
-
 .container.main {
     background: transparent !important;
     background-color: transparent !important;
@@ -68,25 +66,34 @@ body {
 
     box-shadow: none !important;
 }
-/* REMOVE WHITE PAGE BACKGROUNDS */
+
+
+/* =========================================================
+   TRANSPARENT PAGE / CONTENT BACKGROUNDS
+   Lets the animated GIF show through the large page areas
+   ========================================================= */
 
 .container.main > .row,
 .container.main .col-md-9,
 .container.main .col-md-8,
 .container.main .col-sm-9,
 .container.main .col-sm-8,
+.container.main .col-lg-9,
+.container.main .col-lg-8,
 #main,
 .main {
     background-color: transparent !important;
+    background-image: none !important;
 }
 
-/* Keep actual content boxes styled */
+/* Preserve the actual styled cards and sidebar panels */
 .panel,
 .panel-default,
 .well,
 .sidebar .panel {
     background-color: var(--milk-panel) !important;
 }
+
 
 /* =========================================================
    REMOVE OLD/DUPLICATE CHAT GIFS
