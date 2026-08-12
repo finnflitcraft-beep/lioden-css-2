@@ -749,6 +749,89 @@ hr {
     color: var(--navy);
 }
 
+/* =========================================================
+   REMOVE CHARACTER GIFS FROM CHAT / SIDEBAR
+   ========================================================= */
+
+/* Remove decorative pseudo-elements from the sidebar/chat */
+.sidebar::before,
+.sidebar::after,
+#chatMessageContainer::before,
+#chatMessageContainer::after,
+#chatbox::before,
+#chatbox::after,
+.chatbox::before,
+.chatbox::after,
+#chat::before,
+#chat::after {
+    content: none !important;
+    display: none !important;
+    background-image: none !important;
+}
+
+
+/* Make absolutely sure the two character GIFs cannot
+   appear as backgrounds inside the sidebar */
+
+.sidebar,
+#chatMessageContainer,
+#chatbox,
+.chatbox,
+#chat {
+    background-image: none !important;
+}
+
+
+/* =========================================================
+   KEEP ONLY THE TWO OUTER CORNER CHARACTERS
+   ========================================================= */
+
+html::before {
+    content: "" !important;
+    display: block !important;
+
+    position: fixed !important;
+    top: 90px !important;
+    right: 12px !important;
+
+    width: 240px !important;
+    height: 240px !important;
+
+    background-image:
+        url("https://i.pinimg.com/originals/52/30/00/5230004a286b6fd261c839649ecbae8a.gif")
+        !important;
+
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    pointer-events: none !important;
+    z-index: 9999 !important;
+}
+
+
+html::after {
+    content: "" !important;
+    display: block !important;
+
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 5px !important;
+
+    width: 300px !important;
+    height: 300px !important;
+
+    background-image:
+        url("https://i.pinimg.com/originals/ab/4c/b1/ab4cb1aba5a2e59211a4ec0fcbb49ec3.gif")
+        !important;
+
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    pointer-events: none !important;
+    z-index: 9999 !important;
+}
 
 /* =========================================================
    END
